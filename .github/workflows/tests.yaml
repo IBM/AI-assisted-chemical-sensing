@@ -28,4 +28,4 @@ jobs:
       run: python -m pytest -sv --cov=chemsense.vision tests
     - name: CLI endpoints
       run: |
-        chemsense-vision-encode-images --help
+        chemsense-encode-images --help
