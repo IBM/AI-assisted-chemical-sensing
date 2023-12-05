@@ -30,13 +30,36 @@ num_rep = int(os.getenv("NUMBER_OF_REPEATS", 50))
 
 @click.command()
 @click.option("--task", type=str, default="red_wines", help="Dataset name identifier.")
-@click.option("--n_comp", type=int, default=10, help="Number of principal components to be used as predictors.")
-@click.option("--mix_ratio", type=float, default=0.95, help="Fraction of pixel intensity for image mixing and data augmentation. Needs to be between 0 and 1.")
-@click.option("--batch_size", type=int, default=10, help="Batch size for image loading and processing.")
 @click.option(
-    "--data_path", required=True, type=click.Path(path_type=Path, exists=True), help="Path to image directory."
+    "--n_comp",
+    type=int,
+    default=10,
+    help="Number of principal components to be used as predictors.",
 )
-@click.option("--output_path", required=True, type=click.Path(path_type=Path), help="Path to save classification model validation results.")
+@click.option(
+    "--mix_ratio",
+    type=float,
+    default=0.95,
+    help="Fraction of pixel intensity for image mixing and data augmentation. Needs to be between 0 and 1.",
+)
+@click.option(
+    "--batch_size",
+    type=int,
+    default=10,
+    help="Batch size for image loading and processing.",
+)
+@click.option(
+    "--data_path",
+    required=True,
+    type=click.Path(path_type=Path, exists=True),
+    help="Path to image directory.",
+)
+@click.option(
+    "--output_path",
+    required=True,
+    type=click.Path(path_type=Path),
+    help="Path to save classification model validation results.",
+)
 def main(
     task: str,
     n_comp: int,

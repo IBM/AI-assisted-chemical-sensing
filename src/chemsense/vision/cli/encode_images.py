@@ -20,11 +20,27 @@ from ..logging_configuration import setup_basic_logging_for_scripts
 
 
 @click.command()
-@click.option("--task", type=str, default="red_wines", help= "Task name to be used as identifier.")
 @click.option(
-    "--data_path", required=True, type=click.Path(path_type=Path, exists=True), help="Path to directory containing sensor raw data.")
-@click.option("--export_spectra_path", required=True, type=click.Path(path_type=Path), help="Path to save processed sensor data.")
-@click.option("--export_images_path", required=True, type=click.Path(path_type=Path),help="Path to save generated images.")
+    "--task", type=str, default="red_wines", help="Task name to be used as identifier."
+)
+@click.option(
+    "--data_path",
+    required=True,
+    type=click.Path(path_type=Path, exists=True),
+    help="Path to directory containing sensor raw data.",
+)
+@click.option(
+    "--export_spectra_path",
+    required=True,
+    type=click.Path(path_type=Path),
+    help="Path to save processed sensor data.",
+)
+@click.option(
+    "--export_images_path",
+    required=True,
+    type=click.Path(path_type=Path),
+    help="Path to save generated images.",
+)
 def main(
     task: str, data_path: Path, export_spectra_path: Path, export_images_path: Path
 ) -> None:

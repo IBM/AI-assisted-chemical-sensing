@@ -25,13 +25,36 @@ from ..modeling.encoders import ENCODERS_REGISTRY
 
 @click.command()
 @click.option("--task", type=str, default="red_wines", help="Dataset name identifier.")
-@click.option("--validation", type=str, default="kfold", help="Validation strategy. Supported types are kfold, LOCO, few_shots and Sugar_LOCO.")
-@click.option("--number_of_folds", type=int, default=5, help="number of folds to be used in case of kfold validation.")
-@click.option("--number_of_components", type=int, default=30, help="Max number of principal components to be used.")
 @click.option(
-    "--features_path", required=True, type=click.Path(path_type=Path, exists=True), help="Path to directory containing extracted features."
+    "--validation",
+    type=str,
+    default="kfold",
+    help="Validation strategy. Supported types are kfold, LOCO, few_shots and Sugar_LOCO.",
 )
-@click.option("--output_path", required=True, type=click.Path(path_type=Path), help="Path to save classification model validation results.")
+@click.option(
+    "--number_of_folds",
+    type=int,
+    default=5,
+    help="number of folds to be used in case of kfold validation.",
+)
+@click.option(
+    "--number_of_components",
+    type=int,
+    default=30,
+    help="Max number of principal components to be used.",
+)
+@click.option(
+    "--features_path",
+    required=True,
+    type=click.Path(path_type=Path, exists=True),
+    help="Path to directory containing extracted features.",
+)
+@click.option(
+    "--output_path",
+    required=True,
+    type=click.Path(path_type=Path),
+    help="Path to save classification model validation results.",
+)
 def main(
     task: str,
     validation: str,

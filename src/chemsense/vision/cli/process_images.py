@@ -20,11 +20,24 @@ from ..modeling.encoders import ENCODERS_REGISTRY
 
 @click.command()
 @click.option("--task", type=str, default="red_wines", help="Dataset name identifier.")
-@click.option("--batch_size", type=int, default=10, help="Batch size for image loading and processing.")
 @click.option(
-    "--data_path", required=True, type=click.Path(path_type=Path, exists=True), help="Path to image directory."
+    "--batch_size",
+    type=int,
+    default=10,
+    help="Batch size for image loading and processing.",
 )
-@click.option("--features_path", required=True, type=click.Path(path_type=Path), help="Path to save extracted features.")
+@click.option(
+    "--data_path",
+    required=True,
+    type=click.Path(path_type=Path, exists=True),
+    help="Path to image directory.",
+)
+@click.option(
+    "--features_path",
+    required=True,
+    type=click.Path(path_type=Path),
+    help="Path to save extracted features.",
+)
 def main(task: str, batch_size: int, data_path: Path, features_path: Path) -> None:
     setup_basic_logging_for_scripts()
     data_path = Path.joinpath(data_path, task)
