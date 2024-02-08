@@ -365,9 +365,9 @@ def attach_classification_head_fewshots(
                     "PC_explanation": str(explanation),
                 }
 
-                complete_results[
-                    f"{model_name}_{model}_{str(n_comp)}_{str(shot)}"
-                ] = results
+                complete_results[f"{model_name}_{model}_{str(n_comp)}_{str(shot)}"] = (
+                    results
+                )
 
     summary_results = pd.DataFrame.from_dict(complete_results, orient="index")
     summary_results.to_csv(
