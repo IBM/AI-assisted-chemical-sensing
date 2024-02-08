@@ -5,7 +5,7 @@ This repository provides **chemsense**, a package developed for chemical sensor 
 
 <img src="src/chemsense/vision/resources/Figure_README.png" alt="logo" width="800">
 
-The code provided in this repository was used to generate the results for a paper that has been submitted for publication in *Nature Machine Intelligence*.
+The code provided in this repository was used to generate the results for a paper that has been submitted for peer review.
 
 ## Installation
 
