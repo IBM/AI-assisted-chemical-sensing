@@ -158,7 +158,7 @@ Current default values are:
 ## License
 
 All source code is made available under an Apache 2.0 license. 
-Detailed description of the the license termes is provided [here](./LICENSE.md).
+Detailed description of the the license terms is provided [here](./LICENSE.md).
 
 The manuscript text is not open source. The authors reserve the rights to the
 article content, which is currently submitted for peer review.
